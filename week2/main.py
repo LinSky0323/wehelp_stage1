@@ -172,8 +172,8 @@ def find(spaces, stat, n):
     #列出能坐的車廂
     can_drive=[]
     for i in enumerate(stat):
-        if stat[i]==1:
-            can_drive.append(i)
+        if i[1]==1:
+            can_drive.append(i[0])
     #看哪節車廂最適合
     empty=float("inf")
     ans=-1
