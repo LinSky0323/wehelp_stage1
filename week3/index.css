@@ -93,6 +93,19 @@ body{
     opacity: 0.3;
 }
 
+.load_more{
+    display: block;
+    width:150px;
+    font-size: 20px;
+    margin:auto;
+    margin-top:15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border:1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
 @media(max-width:1200px){
     .container{
         width:90%;
@@ -110,11 +123,11 @@ body{
     .big_container{
         grid-template-columns:repeat(4,1fr);
     }
-    .big_box:nth-last-child(2){
+    .big_box:nth-child(10n+9){
         grid-column-start: 1;
         grid-column-end: 3;
     }
-    .big_box:nth-last-child(1){
+    .big_box:nth-child(10n+10){
         grid-column-start: 3;
         grid-column-end: 5;
     }

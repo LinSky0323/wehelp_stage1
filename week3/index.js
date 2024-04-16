@@ -40,20 +40,54 @@ function render_big_box(mes,pic){
 
 }
 
-async function main(URL){
+async function create_small_box(URL){
     const data=await getData(URL);
     for(let i=0;i<3;i++){
         const img=data[i+N]["filelist"].split("https")[1];
         const text=data[i+N]["stitle"];
         render_small_box(text,img)
-        N++;
     }
-    for (let i=0;i<10;i++){
+    N+=3;
+}
+
+async function create_big_box(URL){
+    const data=await getData(URL);
+    for(let i=0;i<10;i++){
+        if(data[i+N]===undefined){
+            const button = document.querySelector("#load_more");
+            button.disabled=true;
+            break;
+        }
         const img=data[i+N]["filelist"].split("https")[1];
         const text=data[i+N]["stitle"];
-        render_big_box(text,img);
-        N++
+        render_big_box(text,img)
     }
+    N+=10;
+}
+
+function load_more(){
+    const button = document.querySelector("#load_more");
+    button.addEventListener("click",(e)=>{
+        create_big_box(URL);
+        console.log("點了一次")
+    })
+}
+function click_list(){
+    const btn=document.querySelector("#btn");
+    const list=document.querySelector("#list");
+    const cross=document.querySelector("#cross");
+    btn.addEventListener("click",()=>{
+        list.classList.toggle("cli")
+    })
+    cross.addEventListener("click",()=>{
+        list.classList.toggle("cli")
+    })
+}
+async function main(URL){
+    create_small_box(URL);
+    create_big_box(URL);
+    load_more(URL);
+    click_list()
 }
 
 const URL="https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment-1"
