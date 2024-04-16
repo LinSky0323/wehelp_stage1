@@ -35,10 +35,12 @@ with open ("./mrt.csv","w",encoding="utf-8") as file1:
 
 # 第二題
 with open("./article.csv","w",encoding="utf-8") as file2:
-    def getData(URL3):
+    def get_data(url3):
+        """連線取得DATA"""
     #建立request物件，附加request header屬性
-        req=request.Request(URL3,headers={
-            "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+        req=request.Request(url3,headers={
+            "User-Agent":"""Mozilla/5.0 (Windows NT 10.0; Win64; x64) 
+            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36""",
             "cookie":"over18=1"})
         with request.urlopen(req) as response3:
             data3=response3.read().decode("utf-8")
@@ -47,13 +49,15 @@ with open("./article.csv","w",encoding="utf-8") as file2:
         #找到class=title的div 裡面的string是要找的標題
         titles=root.find_all("div",class_="title")
         #在頁面裡點進每個標題
-        for i in titles:
-            if i.a is not None:
-                file2.write(i.a.string+",")
+        for j in titles:
+            if j.a is not None:
+                file2.write(j.a.string+",")
                 #對點進的內容網頁在建立一個Request
-                reqContent=request.Request("https://www.ptt.cc"+i.a["href"],headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+                req_content=request.Request("https://www.ptt.cc"+j.a["href"],headers={"User-Agent":
+                """Mozilla/5.0 (Windows NT 10.0; Win64; x64) 
+                AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36""",
                 "cookie":"over18=1"})
-                with request.urlopen(reqContent) as response:
+                with request.urlopen(req_content) as response:
                     data=response.read().decode("utf-8")
                 root2=bs4.BeautifulSoup(data,"html.parser")
                 #算like的數量
@@ -71,9 +75,9 @@ with open("./article.csv","w",encoding="utf-8") as file2:
                     file2.write(times.find_next_sibling().string+"\n")
         change_page=root.find("a",string="‹ 上頁")
         return change_page["href"]
-    URL3="https://www.ptt.cc/bbs/Lottery/index.html"
-    count=0
+    URLPTT="https://www.ptt.cc/bbs/Lottery/index.html"
+    COUNT=0
     #跑三頁
-    while count<3 :
-        URL3="https://www.ptt.cc"+getData(URL3)
-        count+=1
+    while COUNT<3 :
+        URLPTT="https://www.ptt.cc"+get_data(URLPTT)
+        COUNT+=1
