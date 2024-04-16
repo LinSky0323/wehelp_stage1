@@ -1,11 +1,11 @@
 let N=0;
 
 async function getData(url){
-    return fetch(url).then((e)=>e.json()).then((e)=>e["data"]["results"])
+    return fetch(url).then((e)=>e.json()).then((e)=>e["data"]["results"]);
 }
 
 function render_small_box(mes,pic){
-    const container=document.querySelector("#small_container")
+    const container=document.querySelector("#small_container");
     const box=document.createElement("div");
     box.className="small_box";
     const img=document.createElement("img");
@@ -21,7 +21,7 @@ function render_small_box(mes,pic){
 }
 
 function render_big_box(mes,pic){
-    const container=document.querySelector("#big_container")
+    const container=document.querySelector("#big_container");
     const box=document.createElement("div");
     box.className="big_box";
     const img=document.createElement("img");
@@ -45,7 +45,7 @@ async function create_small_box(URL){
     for(let i=0;i<3;i++){
         const img=data[i+N]["filelist"].split("https")[1];
         const text=data[i+N]["stitle"];
-        render_small_box(text,img)
+        render_small_box(text,img);
     }
     N+=3;
 }
@@ -60,7 +60,7 @@ async function create_big_box(URL){
         }
         const img=data[i+N]["filelist"].split("https")[1];
         const text=data[i+N]["stitle"];
-        render_big_box(text,img)
+        render_big_box(text,img);
     }
     N+=10;
 }
@@ -69,7 +69,6 @@ function load_more(){
     const button = document.querySelector("#load_more");
     button.addEventListener("click",(e)=>{
         create_big_box(URL);
-        console.log("點了一次")
     })
 }
 function click_list(){
@@ -77,19 +76,19 @@ function click_list(){
     const list=document.querySelector("#list");
     const cross=document.querySelector("#cross");
     btn.addEventListener("click",()=>{
-        list.classList.toggle("cli")
+        list.classList.toggle("cli");
     })
     cross.addEventListener("click",()=>{
-        list.classList.toggle("cli")
+        list.classList.toggle("cli");
     })
 }
 async function main(URL){
     create_small_box(URL);
     create_big_box(URL);
     load_more(URL);
-    click_list()
+    click_list();
 }
 
 const URL="https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment-1"
-main(URL)
+main(URL);
 
