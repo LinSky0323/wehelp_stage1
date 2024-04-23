@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{url_for('public',path='/styles.css')}}" rel="stylesheet" />
+    <title>ERR PAGE</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1 class="title_text">失敗頁面</h1>
+    </div>
+    <div class="container">
+      {{message}}
+      <a href="/">返回首頁</a>
+    </div>
+  </body>
+</html>

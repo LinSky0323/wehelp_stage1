@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{url_for('public', path='/styles.css')}}" rel="stylesheet" />
+    <script
+      src="{{url_for('public', path='/index.js')}}"
+      type="module"
+    ></script>
+    <title>HOME PAGE</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1 class="title_text">歡迎光臨，請輸入帳號密碼</h1>
+    </div>
+    <div class="container">
+      <div class="sign_in">登入系統</div>
+      <form action="/signin" class="formlist" method="post" id="formlist">
+        <div>
+          <label for="acount">帳號</label>
+          <input type="text" name="acount" id="acount" />
+        </div>
+        <div>
+          <label for="password">密碼</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div class="check_box">
+          <label for="check_agree" class="checkagree">同意條款</label>
+          <input type="checkbox" class="check_agree" id="check_agree" />
+        </div>
+        <div class="btn_box">
+          <button class="btn" id="btn" type="submit">登入</button>
+        </div>
+      </form>
+    </div>
+    <div class="container">
+      <div class="title2">計算正整數的平方</div>
+      <div>
+        <label for="snumber">正整數</label>
+        <input type="text" name="snumber" id="snumber" />
+      </div>
+      <button class="btn" id="nbtn">計算</button>
+    </div>
+  </body>
+</html>

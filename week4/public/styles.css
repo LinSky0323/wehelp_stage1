@@ -1,0 +1,41 @@
+body{
+    margin:0;
+    font-size:20px;
+}
+
+.title{
+    width:634px;
+    background-color: rgb(12, 12, 75);
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    height:100px;
+}
+.container{
+    width:600px;
+    display: flex;
+    margin:0 auto;
+    padding:1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
+    border:1px solid gray;
+    border-top:none
+}
+.formlist{
+    display: flex;
+    margin:0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:0.5rem
+}
+.btn{
+    width:50px;
+    height: 30px;
+    cursor: pointer;
+}
