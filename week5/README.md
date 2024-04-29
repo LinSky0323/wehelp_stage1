@@ -34,8 +34,8 @@ select * from member where username="test" and password="test";
 ![image](picture/3.7.png)  
 ##3.8  
 update member set name="test2" where username="test";  
-![image](picture/3.8.png)  
 select * from member;  
+![image](picture/3.8.png)  
 ##4.1  
 select count(*) from member;  
 ![image](picture/4.1.png)  
