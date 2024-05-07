@@ -1,0 +1,128 @@
+body{
+    font-size: 20px;
+    margin:0;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+}
+.title{
+    margin:0 auto;
+    padding:10px;
+    font-size:2rem;
+    background-color: rgb(9, 9, 128);
+    color:white;
+    width:500px;
+    text-align: center;
+    font-weight: 600;
+}
+.reg{
+    margin: 0 auto;
+    border:1px solid black;
+    display: flex;
+    flex-direction: column;
+    width:518px;
+    justify-content: center;
+    align-items: center;
+}
+.reg_title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top:20px;
+    margin-bottom: 0;
+}
+.reg form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form div{
+    margin-top: 10px;
+}
+.reg button{
+    margin:10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.sign{
+    margin: 0 auto;
+    border:1px solid black;
+    border-top: 0;
+    display: flex;
+    flex-direction: column;
+    width:518px;
+    justify-content: center;
+    align-items: center;
+}
+.sign_title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top:20px;
+    margin-bottom: 0;
+}
+.sign form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sign div{
+    margin-top: 10px;
+}
+.sign button{
+    margin:10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.err_title{
+    margin:20px;
+
+}
+.re_home{
+    margin-bottom   :20px;    
+}
+.res{
+    margin: 0 auto;
+    border:1px solid black;
+    border-top: 0;
+    display: flex;
+    flex-direction: column;
+    width:518px;
+    justify-content: center;
+    align-items: center;
+}
+.res_title{
+    margin-top: 20px;
+    font-weight: 600;
+}
+.res form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.res_btn{
+    margin:10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.mes{
+    margin: 0 auto;
+    border:1px solid black;
+    border-top: 0;
+    display: flex;
+    flex-direction: column;
+    width:478px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.message{
+    display:flex;
+}
+.message_name{
+    font-weight: 600;
+}
+.message_content{
+    margin-right: 10px;
+}
+

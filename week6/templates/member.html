@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="{{url_for('public',path='index.css')}}" rel="stylesheet" />
+    <script>
+      window.sessionStorage.setItem("username", "{{username}}");
+    </script>
+    <script type="module" src="{{url_for('public',path='member.js')}}"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">歡迎光臨，請註冊登入系統</div>
+      <div class="reg">
+        <div class="err_title">{{name}}，恭喜登入系統</div>
+        <a href="/signout" class="re_home">登出系統</a>
+      </div>
+      <div class="res">
+        <div class="res_title">快來留言吧</div>
+        <div class="res_input">
+          <form action="/create_message" method="post" id="res_form">
+            <div>
+              <label for="response">內容</label>
+              <input
+                type="text"
+                name="response"
+                id="response"
+                style="font-size: 15px"
+              />
+            </div>
+            <button class="res_btn">送出</button>
+          </form>
+        </div>
+      </div>
+      <div class="mes" id="mes"></div>
+    </div>
+  </body>
+</html>
