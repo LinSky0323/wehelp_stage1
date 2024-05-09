@@ -3,7 +3,7 @@
 import mysql.connector
 
 USER="root"
-PASSWORD="不能上傳到GITHUB上"
+PASSWORD="y4hwong6"
 HOST="localhost"
 DATABASE="website"
 
@@ -29,7 +29,7 @@ def get_all_data():
         database=DATABASE,
     )
     cursor=con.cursor(dictionary=True)
-    cursor.execute("select message.*,member.name,member.username from message inner join member on message.member_id=member.id;")
+    cursor.execute("select message.*,member.name,member.username from message inner join member on message.member_id=member.id order by message.id desc;")
     data=cursor.fetchall()
     con.close()
 
@@ -70,3 +70,30 @@ def delete_messages(message_id):
     cursor.execute("delete from message where id=%s",(message_id,))
     con.commit()
     con.close()
+
+def check_acount(acount):
+    con=mysql.connector.connect(
+        user=USER,
+        password=PASSWORD,
+        host=HOST,
+        database=DATABASE,
+    )
+    cursor=con.cursor(dictionary=True)
+    cursor.execute("select username from member where username=%s",(acount,))
+    data=cursor.fetchall()
+    con.close()
+    return data
+
+def check_acount_password(acount,password):
+    con=mysql.connector.connect(
+        user=USER,
+        password=PASSWORD,
+        host=HOST,
+        database=DATABASE,
+    )
+    cursor=con.cursor(dictionary=True)
+    cursor.execute("select * from member where username=%s and password=%s",(acount,password))
+    data=cursor.fetchone()
+    con.close()
+    return data
+
