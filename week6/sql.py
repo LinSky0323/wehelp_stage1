@@ -3,7 +3,7 @@
 import mysql.connector
 
 USER="root"
-PASSWORD="y4hwong6"
+PASSWORD="不可以上傳到GITHUB上"
 HOST="localhost"
 DATABASE="website"
 
