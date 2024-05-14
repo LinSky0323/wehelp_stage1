@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="{{url_for('public',path='index.css')}}" rel="stylesheet" />
+    <script type="module" src="{{url_for('public',path='index.js')}}"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">歡迎光臨，請註冊登入系統</div>
+      <div class="reg">
+        <p class="reg_title">註冊帳號</p>
+        <form action="/signup" method="POST" id="signup_form">
+          <div class="reg_name">
+            <label for="signup_name">姓名</label>
+            <input type="text" name="signup_name" id="signup_name" />
+          </div>
+          <div class="reg_acount">
+            <label for="signup_acount">帳號</label>
+            <input type="text" name="signup_acount" id="signup_acount" />
+          </div>
+          <div class="reg_password">
+            <label for="signup_password">密碼</label>
+            <input
+              typr="password"
+              name="signup_password"
+              id="signup_password"
+            />
+          </div>
+          <button class="reg_btn">註冊</button>
+        </form>
+      </div>
+      <div class="sign">
+        <p class="sign_title">登入系統</p>
+        <form action="/signin" method="post" id="signin_form">
+          <div class="sign_acount">
+            <label for="signin_acount">帳號</label>
+            <input type="text" name="signin_acount" id="signin_acount" />
+          </div>
+          <div class="sign_password">
+            <label for="signin_password">密碼</label>
+            <input
+              type="password"
+              name="signin_password"
+              id="signin_password"
+            />
+          </div>
+          <button class="sign_btn">登入</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

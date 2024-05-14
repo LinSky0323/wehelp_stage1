@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="{{url_for('public',path='index.css')}}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">歡迎光臨，請註冊登入系統</div>
+      <div class="reg">
+        <div class="err_title">{{message}}</div>
+        <a href="/" class="re_home">返回首頁</a>
+      </div>
+    </div>
+  </body>
+</html>
